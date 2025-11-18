@@ -1,0 +1,18 @@
+<!-- navbar start -->
+ <div class="topnav shadow p-1">
+    <a class="user">User Dashboard</a>
+    <span class="menu" (click)="openNav()"><i class="fa-solid fa-list"></i></span>
+ </div>
+<!-- navbar end -->
+ <!-- sidebar start -->
+  <div class="sidebar shadow p-2" id="sidebar" [ngStyle]="responsiveMenu">
+    <ul class="nav-links">
+        <li><a routerLink="home"><i class="fa-solid fa-house"></i> Home</a></li>
+        <!-- <li><a routerLink="about"><i class="fa-solid fa-address-card"></i> About</a></li> -->
+        <li><a routerLink="skills"><i class="fa-solid fa-kitchen-set"></i> Skills</a></li>
+        <li><a routerLink="services"><i class="fa-solid fa-server"></i> Services</a></li>
+        <li><a routerLink="portfolio"><i class="fa-solid fa-diagram-project"></i> Portfolio</a></li>
+        <!-- <li><a routerLink="contact"><i class="fa-solid fa-address-book"></i> Contact</a></li> -->
+    </ul>
+  </div>
+ <!-- sidebar end -->

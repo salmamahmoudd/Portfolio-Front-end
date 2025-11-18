@@ -1,0 +1,20 @@
+<div class="container">
+  <h2>Services Dashboard</h2>
+
+  <form (ngSubmit)="isEditMode ? updateServices() : addServices()" class="form-box">
+    <input type="text" placeholder="Name" [(ngModel)]="model.name" name="name">
+    <input type="text" placeholder="Title" [(ngModel)]="model.title" name="title" required>
+    <input type="file" (change)="onFileSelected($event)">
+    <button type="submit">{{ isEditMode ? 'Update Service' : 'Add Service' }}</button>
+    <button type="button" *ngIf="isEditMode" (click)="cancelEdit()">Cancel</button>
+  </form>
+
+  <div class="cards">
+    <div class="card" *ngFor="let s of services">
+      <img *ngIf="s.image" [src]="'http://localhost:3000/files/' + s.image">
+      <h3>{{ s.title }}</h3>
+      <button (click)="editServices(s)">Edit</button>
+      <button (click)="deleteServices(s._id)">Delete</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<section id="skills">
+            <div class="container">
+                <h2><i class="fa-solid fa-laptop-code"></i> Skills & <span class="heading-color">Abilites</span> 
+                </h2>
+                <hr>
+                <div class="skills-content">
+                    <div class="row">
+                        <div class="item" *ngFor="let s of skills">
+                <img [src]="'http://localhost:3000/files/'+s.image" loading="lazy">
+                <div class="item-content">
+                    <h3>{{s.title}}</h3>
+                </div>
+            </div>
+</div>
+        </div>
+    </div>
+</section>

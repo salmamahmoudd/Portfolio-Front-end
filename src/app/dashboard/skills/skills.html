@@ -1,0 +1,22 @@
+<div class="container">
+  <h2>Skills Dashboard</h2>
+
+
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="form-box">
+    <input type="text" formControlName="title" placeholder="Enter skill title">
+    <input type="file" (change)="onFileChange($event)">
+    
+    <button type="submit">{{ isEditMode ? 'Update Skill' : 'Add Skill' }}</button>
+    <button type="button" *ngIf="isEditMode" (click)="cancelEdit()">Cancel</button>
+  </form>
+
+
+  <div class="cards">
+    <div class="card" *ngFor="let s of skills">
+      <img *ngIf="s.image" [src]="'http://localhost:3000/files/' + s.image">
+      <h3>{{ s.title }}</h3>
+      <button (click)="editSkill(s)">Edit</button>
+      <button (click)="deleteSkill(s._id)">Delete</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="container">
+  <h2>Portfolio Dashboard</h2>
+
+  <form (ngSubmit)="isEditMode ? updateProject() : addProject()" class="form-box">
+    <input type="text" placeholder="Title" [(ngModel)]="model.title" name="title" required>
+    <input type="text" placeholder="Project Link" [(ngModel)]="model.link" name="link">
+    <input type="file" (change)="onFileSelected($event)">
+    <button type="submit">{{ isEditMode ? 'Update Project' : 'Add Project' }}</button>
+    <button type="button" *ngIf="isEditMode" (click)="cancelEdit()">Cancel</button>
+  </form>
+
+  <div class="cards">
+    <div class="card" *ngFor="let p of projects">
+      <img *ngIf="p.image" [src]="'http://localhost:3000/files/' + p.image">
+      <h3>{{ p.title }}</h3>
+      <a *ngIf="p.link" [href]="p.link" target="_blank">Visit</a>
+      <button (click)="editProject(p)">Edit</button>
+      <button (click)="deleteProject(p._id)">Delete</button>
+    </div>
+  </div>
+</div>

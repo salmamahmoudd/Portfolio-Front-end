@@ -1,0 +1,32 @@
+<header id="home" class="home">
+  <div class="header-content container">
+    <div class="content-text">
+      <p><span class="p-gray">HI There, I'm</span></p>
+      <h1>{{ home.name }}</h1>
+      <p class="title">{{ home.title }}</p>
+
+      <div class="social-icons">
+        <a *ngFor="let s of home.social" [href]="s.url" target="_blank" class="social-item">
+          <i [ngClass]="'fa-brands fa-' + s.platform"></i>
+        </a>
+      </div>
+<div class="social-icons about-social">
+  <div class="social-item">
+    <a href="https://www.facebook.com/salmaamahmouudd" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+    <a href="https://www.linkedin.com/in/salma-mahmoud-520b222a4" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+    <a href="https://www.instagram.com/salmaamahmmoudd?igsh=MnFoaTd1OTkyenZr" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://github.com/salmamahmoudd" target="_blank"><i class="fa-brands fa-github"></i></a>
+  </div>
+</div>
+      <a routerLink="/about" class="button">
+        About Me <i class="fa-solid fa-circle-arrow-down"></i>
+      </a>
+    </div>
+    
+
+    <div class="image-box">
+        <img src="Salma.jpg" alt="">
+      <img *ngIf="home.image" [src]="'http://localhost:3000/files/' + home.image" alt="Profile Image">
+    </div>
+  </div>
+</header>

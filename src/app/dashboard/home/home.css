@@ -1,0 +1,110 @@
+form {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f7f7f7;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-family: Arial, sans-serif;
+}
+
+form input[type="text"],
+form input[type="file"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+form button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #fff;
+  transition: 0.3s;
+}
+
+form button[type="submit"] {
+  background-color: #8d609a;
+}
+
+form button[type="button"] {
+  background-color: #3c1d6a;
+}
+
+form button:hover {
+  opacity: 0.8;
+}
+
+hr {
+  margin: 40px 0;
+  border: 0;
+  border-top: 1px solid #ccc;
+}
+
+.home-item {
+  max-width: 600px;
+  margin: 15px auto;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.home-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.home-item p {
+  flex: 1 1 200px;
+  margin: 0;
+  font-weight: bold;
+  color: #333;
+}
+
+.home-item div a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: #3e156c;
+  font-size: 14px;
+}
+
+.home-item div a:hover {
+  text-decoration: underline;
+}
+
+.home-item button {
+  padding: 6px 12px;
+  margin-left: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.home-item button:first-of-type {
+  background-color: #851b8d;
+}
+
+.home-item button:last-of-type {
+  background-color: #af38ad; 
+}
+
+.home-item button:hover {
+  opacity: 0.8;
+}
+
+

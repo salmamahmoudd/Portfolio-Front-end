@@ -1,0 +1,24 @@
+<form (ngSubmit)="isEditMode ? updateItem() : addItem()">
+  <input type="text" [(ngModel)]="model.name" name="name" placeholder="Name">
+  <input type="text" [(ngModel)]="model.title" name="title" placeholder="Title">
+  
+  <div *ngFor="let s of model.social; let i = index">
+    <input [(ngModel)]="model.social[i].url" name="social{{i}}" placeholder="{{s.platform}} URL">
+  </div>
+
+  <input type="file" (change)="onFileSelected($event)">
+  <button type="submit">{{ isEditMode ? 'Update' : 'Add' }}</button>
+  <button type="button" (click)="cancelEdit()">Cancel</button>
+</form>
+
+<hr>
+
+<div *ngFor="let item of homeItems">
+  <img *ngIf="item.image" [src]="'http://localhost:3000/files/' + item.image" width="80">
+  <p>{{ item.name }} - {{ item.title }}</p>
+  <div *ngFor="let s of item.social">
+    <a [href]="s.url" target="_blank">{{ s.platform }}</a>
+  </div>
+  <button (click)="editItem(item)">Edit</button>
+  <button (click)="deleteItem(item._id)">Delete</button>
+</div>

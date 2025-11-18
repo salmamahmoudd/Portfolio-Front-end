@@ -1,0 +1,16 @@
+ <section id="services">
+            <div class="container">
+              <div class="heading">
+                <img src="services.png" alt="Services illustration" loading="lazy">
+                <h2>My <span class="heading-color">Services</span></h2>
+              </div>
+              <hr>
+              <div class="row">
+                    <div class="item" *ngFor="let s of services">
+                        <img [src]="'http://localhost:3000/files/' + s.image" alt="Laptop" loading="lazy">
+                         <h3>{{s.name}}</h3>
+                         <p>{{s.title}}</p>
+                    </div>
+              </div>
+            </div>
+          </section>
